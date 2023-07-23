@@ -26,12 +26,13 @@ def cisfun(text):
 
 
 @app.route('/python', strict_slashes=False)
-@app.route('/python/(<text>)', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def python_is_cool(text="is cool"):
     """
     Returns Python followed by the value of the text var
     """
-    text = text.replace('_', ' ')
+    if text != "is cool":
+        text = text.replace('_', ' ')
     return "Python {}".format(text)
 
 
