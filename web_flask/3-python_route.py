@@ -25,6 +25,7 @@ def cisfun(text):
     return "C {}".format(text)
 
 
+@app.route('/python', strict_slashes=False)
 @app.route('/python/(<text>)', strict_slashes=False)
 def python_is_cool(text="is cool"):
     """
