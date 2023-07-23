@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_hbn():
+def hello():
     """ returns a greeting from 0.0.0.0:5000 """
     return "Hello HBNB!"
 
@@ -36,7 +36,7 @@ def python_is_cool(text="is cool"):
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
-def number_if_int(n):
+def num_if_int(n):
     """ Returns a text only if n is an integer """
     return "{:d} is a number".format(n)
 
@@ -48,4 +48,4 @@ def num_template(n):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
